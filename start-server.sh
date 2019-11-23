@@ -1,4 +1,6 @@
 
+# sudo systemctl start docker
+
 # Start docker
 
 sudo systemctl start docker
