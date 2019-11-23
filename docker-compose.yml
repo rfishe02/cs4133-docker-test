@@ -1,13 +1,16 @@
-web:
-  image: nginx:latest
-  ports:
-    - "8080:80"
-  volumes:
-    - ./content:/content
-    - ./site.conf:/etc/nginx/conf.d/site.conf
-  links:
-    - php
-php:
-  image: php:7-fpm
-  volumes:
-    - ./content:/content
+version: '1'
+
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./content:/content
+      - ./site.conf:/etc/nginx/conf.d/site.conf
+    links:
+      - php
+  php:
+    image: php:7-fpm
+    volumes:
+      - ./content:/content
