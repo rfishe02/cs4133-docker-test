@@ -1,16 +1,14 @@
-version: '2'
+version: '3'
 
 services:
-  web:
-    image: nginx:latest
+  php-fpm:
+  
+  nginx:
+    build:
+      context: ./nginx
+    volumes:
+      - ../src:/var/www
     ports:
-      - "8080:80"
-    volumes:
-      - ./content:/content
-      - ./site.conf:/etc/nginx/conf.d/default.conf
-    links:
-      - php
-  php:
-    image: php:7-fpm
-    volumes:
-      - ./content:/content
+      - "80:80"
+      - "443:443"
+    
