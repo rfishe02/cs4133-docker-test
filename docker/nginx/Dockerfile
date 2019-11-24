@@ -1,3 +1,3 @@
 FROM nginx:alpine
-CMD["nginx"]
+CMD ["nginx"]
 EXPOSE 80 443
