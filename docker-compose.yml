@@ -4,8 +4,8 @@ services:
   php-fpm:
     build:
       context: ./docker/php-fpm
-      volumes: 
-        - ./src:/var/www
+    volumes: 
+      - ./src:/var/www
   nginx:
     build:
       context: ./docker/nginx
