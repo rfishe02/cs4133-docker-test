@@ -1,3 +1,3 @@
-FROM php:7.2-fpm
+FROM php:fpm
 CMD["php-fpm"]
 EXPOSE 9000
