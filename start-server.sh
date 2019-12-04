@@ -6,8 +6,7 @@
 sudo systemctl start docker
 
 # Pull nginx image
-
-sudo docker pull nginx
+# sudo docker pull nginx
 
 # Run nginx server
 
