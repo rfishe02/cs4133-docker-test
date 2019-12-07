@@ -1,16 +1,42 @@
 
+#-------------------------
+# Start docker
+#-------------------------
+
 # sudo systemctl start docker
 
-# Start docker
+#-------------------------
+# See a list of all containers
+#-------------------------
 
-sudo systemctl start docker
+# docker container ls -a
 
-# Pull nginx image
-# sudo docker pull nginx
+#-------------------------
+# Restart container
+#-------------------------
 
-# Run nginx server
+# sudo docker container restart docker-nginx
 
-docker run --name docker-nginx -p 8080:80 nginx
+#-------------------------
+# Remove a container
+#-------------------------
 
-# Run in detached mode
-# docker run --name docker-nginx -p 8080:80 -d nginx
+# sudo docker stop <id>
+
+#-------------------------
+# Remove a container
+#-------------------------
+
+# docker rm <id>
+
+#-------------------------
+# Lauch application
+#-------------------------
+
+# sudo docker compose up
+
+#-------------------------
+# Stop application
+#-------------------------
+
+# docker-compose down
