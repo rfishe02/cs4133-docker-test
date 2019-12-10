@@ -80,6 +80,18 @@
             +"</div>"
             +"</div>";
             
+            /*
+            
+Make an email / password in the database
+Then, make a post to /login & send it our email & password as json data
+It will return an user object & token (keep it in a cookie / local storage)
+
+For every request, we'll have to send the token as a header.
+We'll add a header (bearer-token).
+
+            
+            */
+            
             $(card).hide().appendTo("#cardStack").animate({bottom:"100px", opacity:"show"}, 500); // Fade in with append.
             
             // Assign functions to success / failure buttons.
