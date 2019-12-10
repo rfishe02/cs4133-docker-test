@@ -71,12 +71,12 @@
       
       $("#accept").click(function(){
         
-        $("#profile-div").animate({ marginTop: '100px', opacity: '0' }, 'slow', function() {
+        $("#profile-div").animate({ height: '0', opacity: '0' }, 'slow', function() {
             
           loadSomeData();
                 
           // Make box reappear.
-          $("#profile-div").animate({ marginTop: '0px', opacity: '1' }, 'slow', function() {
+          $("#profile-div").animate({ height: '0', opacity: '1' }, 'slow', function() {
             // Possible action to complete when finsihed.
           });
             
