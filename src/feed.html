@@ -41,8 +41,8 @@
     <div id = "profile-div"></div>
 
     <nav class="navbar fixed-bottom navbar-light bg-light">
-      <button id="reject" type="button" class="btn btn-danger" >Next</button>
-      <button id="accept" type="button" class="btn btn-success" >Next</button>
+      <button id="reject" type="button" class="btn btn-danger" >Reject</button>
+      <button id="accept" type="button" class="btn btn-success" >Accept</button>
     </nav>
 
   </body>
@@ -54,15 +54,13 @@
       $("#reject").click(function(){
         
         $("#profile-div").animate({ height: '0', opacity: '0' }, 'slow', function() {
-          
-          /*
+      
           loadSomeData();
-                
+          
           // Make box reappear.
           $("#profile-div").animate({ height: '100', opacity: '1' }, 'slow', function() {
             // Possible action to complete when finsihed.
           });
-          */
             
         });
             
