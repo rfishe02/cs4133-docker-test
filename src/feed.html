@@ -82,12 +82,15 @@
             
             $(card).hide().appendTo("#cardStack").animate({bottom:"100px", opacity:"show"}, 500); // Fade in with append.
             
-            // Assigne handlers to success / failure buttons.
+            // Assign functions to success / failure buttons.
             
             $(".btn-outline-success").click( function(){
      
                 $(this).closest(".card").animate({left:"100px", opacity:"hide"}, 500, function() {
+                    
+                    $("#cardStack").empty(); // Prevent the card stack from becoming too large.
                     getNewCard();
+                    
                 });
   
             });
@@ -95,7 +98,10 @@
             $(".btn-outline-danger").click( function(){
        
                 $(this).closest(".card").animate({right:"100px", opacity:"hide"}, 500, function() {
+                    
+                    $("#cardStack").empty();  // Prevent the card stack from becoming too large.
                     getNewCard();
+                    
                 });
         
             });
