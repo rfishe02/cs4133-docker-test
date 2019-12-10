@@ -16,6 +16,10 @@
     
     <title>Hello, world!</title>
     
+    <!-- animsition.css -->
+    <link rel="stylesheet" href="./animsition/dist/css/animsition.min.css">
+    <!-- animsition.js -->
+    <script src="./animsition/dist/js/animsition.min.js"></script>
     
     <style>
     
@@ -23,73 +27,80 @@
         height: 100%;
       }
       
-      #profile-div {
-        background-color: blue; 
-        height: 900px;
-        width: 1200px;
-        position: absolute;
-        left: 0px;
-        top: 0px;
-      }
-    
     </style>
     
   </head>
   
   <body>
- 
-    <div id = "profile-div"></div>
 
-    <nav class="navbar fixed-bottom navbar-light bg-light">
-      <button id="reject" type="button" class="btn btn-danger" >Reject</button>
-      <button id="accept" type="button" class="btn btn-success" >Accept</button>
-    </nav>
-
+    <div class = "container">
+    
+        <div class = "row" style="height: 200px;"> </div>
+    
+        <div class = "row">
+        
+            <div class = "col">
+            
+                <div id = "cardStack">
+                
+                </div>
+            
+            </div>
+        
+        </div>
+    
+    </div>
+    
   </body>
   
   <script>  
   
     $( document ).ready(function() {
     
-      $("#reject").click(function(){
+        getNewCard(); // Create the first card.
         
-        $("#profile-div").animate({ height: '0', opacity: '0' }, 'slow', function() {
-      
-          loadSomeData();
-          
-          // Make box reappear.
-          $("#profile-div").animate({ height: '100%', opacity: '1' }, 'slow', function() {
-            // Possible action to complete when finsihed.
-          });
-            
-        });
-            
+        function getNewCard() {
         
-            
-      });
-      
-      $("#accept").click(function(){
+            /* Ignore this ugly mess. */
         
-        $("#profile-div").animate({ height: '0', opacity: '0' }, 'slow', function() {
-          
-          /*
-          loadSomeData();
-                
-          // Make box reappear.
-          $("#profile-div").animate({ height: '0', opacity: '1' }, 'slow', function() {
-            // Possible action to complete when finsihed.
-          });*/
+            var card = "<div class='card mb-3'><img class='card-img-top' src='./download.svg' alt='Card image cap'>"
+            +"<div class='card-body'>"
+            +"<h5 class='card-title'>Card title</h5>"
+            +"<p class='card-text'>"
+            +"This is a wider card with supporting text below as a natural lead-in to additional content."
+            +"This is a wider card with supporting text below as a natural lead-in to additional content."
+            +"This is a wider card with supporting text below as a natural lead-in to additional content."
+            +"</p>"
+            +"</div>"
+            +"<div class='card-body'>"
+            +"<div class='btn-group' role='group' style='width: 100%;'>"
+            +"<button type='button' class='btn btn-outline-danger' style='height: 100px;'></button>"
+            +"<button type='button' class='btn btn-outline-success' style='height: 100px;'></button>"
+            +"</div>"
+            +"</div>"
+            +"</div>";
             
+            $(card).hide().appendTo("#cardStack").animate({bottom:"100px", opacity:"show"}, 500); // Fade in with append.
             
-        });
+            // Assigne handlers to success / failure buttons.
             
-            
-            
-      });
-      
-      function loadSomeData() {
-      
-      }
+            $(".btn-outline-success").click( function(){
+     
+                $(this).closest(".card").animate({left:"100px", opacity:"hide"}, 500, function() {
+                    getNewCard();
+                });
+  
+            });
+        
+            $(".btn-outline-danger").click( function(){
+       
+                $(this).closest(".card").animate({right:"100px", opacity:"hide"}, 500, function() {
+                    getNewCard();
+                });
+        
+            });
+        
+        }
     
     });
   
